@@ -1,0 +1,10 @@
+<?php
+	if($log)
+	{
+		require_once("Modules/MenuLog.php");
+	}
+	else
+	{
+		require_once("Modules/MenuNonLog.php");
+	}
+?>
