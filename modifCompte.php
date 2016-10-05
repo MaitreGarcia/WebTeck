@@ -16,7 +16,17 @@
 		<?php require_once('Modules/header.php') ?>
 
 		<!-- Nav -->
-		<?php require_once("nav.php") ?>
+		<?php
+			if($log)
+			{
+				require_once("Modules/MenuLog.php");
+			}
+			else
+			{
+				require_once("Modules/MenuNonLog.php");
+			}
+		?>
+
 
 		<!-- Contact -->
 		<section id="four" class="wrapper special">

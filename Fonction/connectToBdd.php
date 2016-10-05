@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','root');
 	/* 
 		Fonction qui va crée un utilisateur dans la base de données
@@ -79,11 +79,44 @@
 	/* Renvoie un tableau en deux dimentions de toutes les annonces posté par l'utilitateur */
 	function annoncesSelonUtilistateur($PDO,$login)
 	{
-		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login from demande WHERE login = :a ORDER by DtCreate");
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login = :a ORDER by DtCreate");
 		$req->bindParam(':a', $login);
 		$req->execute();
 		return $donnees = $req->fetchAll();
 	}
 
+	//Fonction qui va recupere toutes les annonces
+	function allAnnonce($PDO)
+	{
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login_bienfaiteur IS NULL ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		return $donnees = $req->fetchAll();
+	}
 
+	//Fonction qui va recupere toutes les annonces
+	function chooseAnnonce($PDO,$id)
+	{
+		$req = $PDO->prepare("UPDATE demande SET login_bienfaiteur = :a WHERE idDemande = :b ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->bindParam(':b', $id);
+		$req->execute();
+	}
+
+	//Fonction bienfaiteurs
+	function allBienfaiteurs($PDO,$login)
+	{
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login_bienfaiteur=:a ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		return $donnees = $req->fetchAll();	
+	}
+
+	//Fonction bienfaiteurs
+	function annulationAnnonce($PDO,$id)
+	{
+		$req = $PDO->prepare("UPDATE demande SET login_bienfaiteur = null WHERE idDemande = :a ORDER by DtCreate");
+		$req->bindParam(':a', $id);
+		$req->execute();
+	}
 ?>
