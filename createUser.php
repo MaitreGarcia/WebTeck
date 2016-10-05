@@ -1,6 +1,7 @@
 <?php
 	require_once('Fonction/connectToBdd.php');
 	$log = false;
+	$allready = false;
  	if(isset($_POST['login']) && isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mdp']) && isset($_POST['email']) && isset($_POST['statut']))
  	{
  	 	$login = $_POST['login'];
@@ -10,12 +11,16 @@
  		$email =  $_POST['email'];
  		$status = $_POST['statut'];
 
- 		createUser($bdd,$login,$nom,$prenom,$mdp,$email,$status);
- 		header('Location: Connexion.php');
- 	}
- 	else
- 	{
-
+ 		if(verfUsername($bdd,$login))
+ 		{
+ 			createUser($bdd,$login,$nom,$prenom,$mdp,$email,$status);
+ 			
+ 			header('Location: Connexion.php');
+ 		}
+ 		else
+ 		{
+ 			$allready = true;
+ 		}
  	}
 ?>
 <HTML>
@@ -45,6 +50,13 @@
 				<header class="major narrow">
 					<h2>Se connecter</h2>
 					<p>Créez vous un compte pour pouvoir demander ou proposé de l'aide</p>
+					<?php
+						if($allready)
+						{
+							echo '<p style="color:red;">Ce login existe déja</p>';
+						}
+
+					?>
 				</header>
 				<form method="post" action="createUser.php">
 					<div class="container 75%">

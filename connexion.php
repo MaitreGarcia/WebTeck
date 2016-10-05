@@ -1,7 +1,8 @@
 <?php
 	require_once('Fonction/connectToBdd.php');
 	$log = false;
-	
+	$fail = false;
+
 	if(isset($_POST['login']) && isset($_POST['mdp']))
 	{
 		$login = $_POST['login'];
@@ -21,7 +22,7 @@
 		}
 		else
 		{
-			echo '<span class="errorConnect">Login ou mot de passe incorrect</span>';
+			$fail = true;
 		}
 	}
 	else
@@ -56,6 +57,12 @@
 				<header class="major narrow">
 					<h2>Connexion</h2>
 					<p>Pour vous connecter, veuillez remplir les champs ci-dessous avec vos identifiants</p>
+					<?php
+						if($fail)
+						{
+							echo '<p style="color:red">Login ou mot de passe incorrect</p>';
+						}
+					?>
 				</header>
 				<form method="POST" href="#">
 					<div class="container 75%">
