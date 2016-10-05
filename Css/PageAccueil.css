@@ -1,0 +1,15 @@
+#logo 
+{
+	width: 15%;
+	height: auto;
+	float: left;
+	display: block;
+}
+
+#logo img
+{
+	width: 100%;
+	height: auto;
+	float: left;
+	display: block;
+}
