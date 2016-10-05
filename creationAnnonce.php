@@ -9,11 +9,11 @@
 	if(isset($_POST['categorie']) && isset($_POST['titre']) && isset($_POST['prix']) && isset($_POST['annonce']))
 	{
 		$categorie = $_POST['categorie'];
-		$titre = $_POST['categorie'];
-		$prix = $_POST['categorie'];
-		$annonce = $_POST['categorie'];
-		
-		if(insertAnnonce($bdd,$login,$annonce,$titre,$categorie,$prix) != null)
+		$titre = $_POST['titre'];
+		$prix = $_POST['prix'];
+		$annonce = $_POST['annonce'];
+
+		if(!insertAnnonce($bdd,$login,$annonce,$titre,$categorie,$prix))
 		{
 			header('Location: index.php');
 		}

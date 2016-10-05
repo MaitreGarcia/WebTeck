@@ -1,5 +1,5 @@
 <?php
-	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','');
+	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','root');
 	/* 
 		Fonction qui va crée un utilisateur dans la base de données
 	*/ 
@@ -66,15 +66,24 @@
 	/* Fonction qui va insérer l'annonce dans la base de donnée */
 	function insertAnnonce($PDO,$login,$annonce,$titre,$categorie,$prix)
 	{
-		$req = $PDO->prepare('INSERT INTO demande(login,Titre,Annonce,Categorie,DtCreate,Statut,Prix) VALUES(:a,:b,:c,:d,NOW(),"Open",:e)');
-		$res = $req->execute(array(
-			'a' => $login,
-			'b' => $titre,
-			'c' => $annonce,
-			'd' => $categorie,
-			'e' => intval($prix)
- 			));
-        return $res;
+		$req = $PDO->prepare('INSERT INTO demande(login,Titre,Annonce,Categorie,DtCreate,Statut,Prix,login_bienfaiteur) VALUES(:a,:b,:c,:d,NOW(),"Open",:e,null)');
+		$req->bindParam(':a', $login);
+		$req->bindParam(':b', $titre);
+		$req->bindParam(':c', $annonce);
+		$req->bindParam(':d', $categorie);
+		$req->bindParam(':e', intval($prix));
+		return $req->execute();
 	}
+
+
+	/* Renvoie un tableau en deux dimentions de toutes les annonces posté par l'utilitateur */
+	function annoncesSelonUtilistateur($PDO,$login)
+	{
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login from demande WHERE login = :a ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		return $donnees = $req->fetchAll();
+	}
+
 
 ?>

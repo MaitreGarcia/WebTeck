@@ -25,21 +25,12 @@
 ?>
 <HTML>
 	<head>
-		<title>WebTeck</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="../assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="../assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="../assets/css/ie9.css" /><![endif]-->
+		<?php require_once('Modules/head.php') ?>
 	</head>
 	<body>
 
 		<!-- Header -->
-			<header id="header" class="alt">
-				<h1><a href="index.php">WebTeck</a></h1>
-				<a href="#nav">Menu</a>
-			</header>
+		<?php require_once('Modules/header.php') ?>
 
 		<!-- Nav -->
 		<?php require_once("nav.php") ?>
@@ -78,6 +69,9 @@
 							</div>
 							<div class="6u 12u$(xsmall)">
 								<select name="statut" placeholder="Statut" />
+									<option>
+										Faites votre choix de profil
+									</option>
 									<option>
 										Demandeur
 									</option>

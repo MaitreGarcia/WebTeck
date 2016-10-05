@@ -47,21 +47,16 @@
 					?>
 					
 				</header>
-				<?php
-				if($log)
-				{
-					<div class="image-grid">
-					<a href="creationAnnonce.php" class="image"><img src="images/pic04.png" alt="" /></a>
-					<a href="#" class="image"><img src="images/pic05.png" alt="" /></a>
-					<a href="#" class="image"><img src="images/pic06.png" alt="" /></a>
-					<a href="#" class="image"><img src="images/pic07.png" alt="" /></a>
+				<div class="image-grid">
+					<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+					<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
 				</div>
-				}
-				else
-				{
-					echo '<p>Site d\'annonces pour le troisième âge</p>';
-				}
-				?>
 			</div>
 		</section>
 
