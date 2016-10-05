@@ -63,4 +63,18 @@
 		}
 	}
 	
+	/* Fonction qui va insérer l'annonce dans la base de donnée */
+	function insertAnnonce($PDO,$login,$annonce,$titre,$categorie,$prix)
+	{
+		$req = $PDO->prepare('INSERT INTO demande(login,Titre,Annonce,Categorie,DtCreate,Statut,Prix) VALUES(:a,:b,:c,:d,NOW(),"Open",:e)');
+		$res = $req->execute(array(
+			'a' => $login,
+			'b' => $titre,
+			'c' => $annonce,
+			'd' => $categorie,
+			'e' => intval($prix)
+ 			));
+        return $res;
+	}
+
 ?>

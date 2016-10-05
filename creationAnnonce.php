@@ -4,6 +4,7 @@
 	$login = $_COOKIE['cookies_log'];
 	$mdp = $_COOKIE['cookies_mdp'];
 	$personne = login($bdd,$login, $mdp);
+	$error = false;
 
 	if(isset($_POST['categorie']) && isset($_POST['titre']) && isset($_POST['prix']) && isset($_POST['annonce']))
 	{
@@ -11,8 +12,18 @@
 		$titre = $_POST['categorie'];
 		$prix = $_POST['categorie'];
 		$annonce = $_POST['categorie'];
-
-
+		
+		if(insertAnnonce($bdd,$login,$annonce,$titre,$categorie,$prix) != null)
+		{
+			header('Location: index.php');
+		}
+		else
+		{
+			header('Location: index.php');
+			$error = true;
+		}
+ 			
+ 			
 	}
 ?>
 <HTML>
@@ -34,7 +45,7 @@
 					<h2>Création d'annonce</h2>
 					<p>Créez une annonce pour recevoir de l'aide</p>
 				</header>
-				<form method="post" action="createUser.php">
+				<form method="post" action="creationAnnonce.php">
 					<div class="container 75%">
 						<div class="row uniform 50%">
 							<div class="12u 12u$(xsmall)">

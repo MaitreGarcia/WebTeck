@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  127.0.0.1
--- Généré le :  Mar 04 Octobre 2016 à 07:22
+-- Généré le :  Mer 05 Octobre 2016 à 08:10
 -- Version du serveur :  5.7.14
 -- Version de PHP :  5.6.25
 
@@ -29,10 +29,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `demande` (
   `idDemande` int(11) NOT NULL,
   `login` varchar(50) NOT NULL,
+  `Titre` text NOT NULL,
   `Annonce` text NOT NULL,
+  `Categorie` varchar(100) NOT NULL,
   `DtCreate` date NOT NULL,
-  `Statut` varchar(50) NOT NULL
+  `Statut` varchar(50) NOT NULL,
+  `Prix` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `demande`
+--
+
+INSERT INTO `demande` (`idDemande`, `login`, `Titre`, `Annonce`, `Categorie`, `DtCreate`, `Statut`, `Prix`) VALUES
+(1, 'yCoucou', 'Tache menagÃ¨res', 'Tache menagÃ¨res', 'Tache menagÃ¨res', '2016-10-05', 'Open', 0);
 
 --
 -- Index pour les tables exportées
@@ -52,7 +62,7 @@ ALTER TABLE `demande`
 -- AUTO_INCREMENT pour la table `demande`
 --
 ALTER TABLE `demande`
-  MODIFY `idDemande` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idDemande` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
