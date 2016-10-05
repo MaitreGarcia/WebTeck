@@ -47,6 +47,7 @@
 					?>
 					
 				</header>
+<<<<<<< HEAD
 				<div class="image-grid">
 					<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
 					<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
@@ -57,15 +58,33 @@
 					<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
 					<a href="#" class="image"><img src="images/pic10.jpg" alt="" /></a>
 				</div>
+=======
+				<?php
+				if($log)
+				{
+					?>
+					<div class="image-grid">
+						<a href="creationAnnonce.php" class="image"><img src="images/pic04.png" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic05.png" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic06.png" alt="" /></a>
+						<a href="#" class="image"><img src="images/pic07.png" alt="" /></a>
+					</div>
+					<?php
+				}
+				else
+				{
+					echo '<p>Site d\'annonces pour le troisième âge</p>';
+				}
+				?>
+>>>>>>> 28da3f77f51e435b141659e14b9e6565b00eee67
 			</div>
 		</section>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
