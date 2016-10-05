@@ -36,7 +36,17 @@
 		<?php require_once("Modules/header.php") ?> 
 
 		<!-- Nav -->
-		<?php require_once("nav.php") ?>
+		<?php
+			if($log)
+			{
+				require_once("Modules/MenuLog.php");
+			}
+			else
+			{
+				require_once("Modules/MenuNonLog.php");
+			}
+		?>
+
 
 		<!-- Contact -->
 		<section id="four" class="wrapper special">
@@ -44,6 +54,7 @@
 				<header class="major narrow">
 					<h2>Création d'annonce</h2>
 					<p>Créez une annonce pour recevoir de l'aide</p>
+					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
 				</header>
 				<form method="post" action="creationAnnonce.php">
 					<div class="container 75%">

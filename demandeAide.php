@@ -1,0 +1,51 @@
+<?php
+	require_once('Fonction/connectToBdd.php');
+	$log = true;
+	$login = $_COOKIE['cookies_log'];
+	$mdp = $_COOKIE['cookies_mdp'];
+	$personne = login($bdd,$login, $mdp);
+?>
+<HTML>
+	<head>
+		<?php require_once("Modules/head.php") ?>
+	</head>
+	<body>
+
+		<!-- Header -->
+		<?php require_once("Modules/header.php") ?> 
+		
+		<!-- Nav -->
+		<?php
+			if($log)
+			{
+				require_once("Modules/MenuLog.php");
+			}
+			else
+			{
+				require_once("Modules/MenuNonLog.php");
+			}
+		?>
+
+
+		<!-- Contact -->
+		<section id="four" class="wrapper special">
+			<div class="inner">
+				<header class="major narrow">
+					<h2><i class="fa fa-life-ring" aria-hidden="true"></i> Demande d'aide <i class="fa fa-life-ring" aria-hidden="true"></i></h2>
+					<p>Avez vous besoin d'aide ?</p>
+					<p>Vous pouvez à tout moment nous appeler.</p>
+					<h3><i class="fa fa-phone" aria-hidden="true"></i> 01 75 96 36 25</h3>
+					<h3><i class="fa fa-envelope" aria-hidden="true"></i> aide@webteck.fr</h3>
+					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
+				</header>
+			</div>
+		</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+	</body>
+</html>

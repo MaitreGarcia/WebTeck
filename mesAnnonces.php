@@ -15,7 +15,17 @@
 		<?php require_once("Modules/header.php") ?> 
 
 		<!-- Nav -->
-		<?php require_once("nav.php") ?>
+		<?php
+			if($log)
+			{
+				require_once("Modules/MenuLog.php");
+			}
+			else
+			{
+				require_once("Modules/MenuNonLog.php");
+			}
+		?>
+
 
 		<!-- Contact -->
 		<section id="four" class="wrapper special">
@@ -23,13 +33,14 @@
 				<header class="major narrow">
 					<h2>Mes annonces</h2>
 					<p>Visualisez vos différentes demandes, <?php echo $personne[0] ?></p>
+					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
 				</header>
 				<?php 
 					$annonces = annoncesSelonUtilistateur($bdd,$personne[0]);
 					
 					for($i=0; $i < count($annonces); $i++)
 					{
-						echo '<p><a class="btn" data-popup-open="popup-'.$i.'annonce" href="#">'.$annonces[$i][0].'</a></p>';
+						echo '<h4><a class="btn" data-popup-open="popup-'.$i.'annonce" href="#">'.$annonces[$i][0].'</a></h4>';
 					}
 
 					//On crée le corps des popups

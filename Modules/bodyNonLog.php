@@ -9,11 +9,9 @@
 				}
 			?>
 		</header>
-		<div class="image-grid">
-			<a href="#" class="image"><img src="" alt="" /></a>	
-			<a href="#" class="image"><img src="images/postAnnonce.png" alt="" /></a>
-			<a href="#" class="image"><img src="images/help.png" alt="" /></a>
-			<a href="#" class="image"><img src="" alt="" /></a>';
+		<div class="image-grid2">
+			<a href="connexion.php" class="image"><img src="images/seCo.png" alt="" /></a>
+			<a href="createUser.php" class="image"><img src="images/createAccount.png" alt="" /></a>
 		</div>
 	</div>
 </section>

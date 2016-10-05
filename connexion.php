@@ -36,12 +36,21 @@
 		<?php require_once('Modules/head.php') ?>
 	</head>
 	<body>
-
 		<!-- Header -->
 		<?php require_once('Modules/header.php') ?>
-
+		
 		<!-- Nav -->
-		<?php require_once("nav.php") ?>
+		<?php
+			if($log)
+			{
+				require_once("Modules/MenuLog.php");
+			}
+			else
+			{
+				require_once("Modules/MenuNonLog.php");
+			}
+		?>
+
 
 		<!-- Contact -->
 		<section id="four" class="wrapper special">
@@ -49,6 +58,7 @@
 				<header class="major narrow">
 					<h2>Connexion</h2>
 					<p>Pour vous connecter, veuillez remplir les champs ci-dessous avec vos identifiants</p>
+					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
 					<?php
 						if($fail)
 						{
