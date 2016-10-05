@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','root');
 	/* 
 		Fonction qui va crée un utilisateur dans la base de données
