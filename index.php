@@ -1,19 +1,16 @@
 <?php 
+	session_start(); 
 	require_once("Fonction/connectToBdd.php");
-	$log = false;
-	//On regarde si jamais il y as des cookies
-	if(isset($_COOKIE['cookies_log']) && isset($_COOKIE['cookies_mdp']))
+	//On regarde si jamais il y une variable de session
+
+	if(isset($_SESSION['login']))
 	{
-		$log;
-		$personne = login($bdd,$_COOKIE['cookies_log'],$_COOKIE['cookies_mdp']);
-		if($personne == null)
-		{
-			$log = false;
-		}
-		else
-		{
-			$log = true;
-		}	
+		$personne = recupPersonne($bdd,$_SESSION['login']);
+		$log = true;
+	}
+	else
+	{
+		$log = false;
 	}
 ?>
 <!DOCTYPE HTML>

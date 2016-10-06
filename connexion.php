@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once('Fonction/connectToBdd.php');
 	$log = false;
 	$fail = false;
@@ -11,23 +12,16 @@
 		//On recupere la personne en BDD, si il n'y as personne, la fonction login renvoi Null	
 		$personne = login($bdd,$login, $mdp);
 
-
 		//Du coup on test si la fonction est null 
 		if($personne != null)
 		{
-			//On crée les cookies pur facilité l'utilisation
-			setcookie('cookies_log',$login,time() + 365 * 24 * 3600, null, null, false, true);
- 			setcookie('cookies_mdp',$mdp,time() + 365 * 24 * 3600, null, null, false, true);
- 			header('Location: index.php');
+			$_SESSION['login'] = $personne[0];
+			header('Location: index.php');
 		}
 		else
 		{
 			$fail = true;
 		}
-	}
-	else
-	{
-
 	}
 ?>
 <!DOCTYPE HTML>
