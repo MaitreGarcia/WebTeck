@@ -27,76 +27,77 @@
 	<head>
 		<?php require_once('Modules/head.php') ?>
 	</head>
-	<body>
+	<body class="landing">
+		<div id="main">
 
-		<!-- Header -->
-		<?php require_once('Modules/header.php') ?>
+			<!-- Header -->
+			<?php require_once('Modules/header.php') ?>
 
-		<!-- Nav -->
-		<?php
-			if($log)
-			{
-				require_once("Modules/MenuLog.php");
-			}
-			else
-			{
-				require_once("Modules/MenuNonLog.php");
-			}
-		?>
-		<!-- Contact -->
-		<section id="four" class="wrapper special">
-			<div class="inner">
-				<header class="major narrow">
-					<h2>Se connecter</h2>
-					<p>Créez-vous un compte pour pouvoir demander ou proposer de l'aide</p>
-					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
-					<?php
-						if($allready)
-						{
-							echo '<p style="color:red;">Ce login existe déja</p>';
-						}
-					?>
-				</header>
-				<form method="post" action="createUser.php">
-					<div class="container 75%">
-						<div class="row uniform 50%">
-							<div class="6u 12u$(xsmall)">
-								<input name="nom" placeholder="Nom" type="text" />
-							</div>
-							<div class="6u 12u$(xsmall)">
-								<input name="prenom" placeholder="Prénom" type="text" />
-							</div>
-							<div class="6u 12u$(xsmall)">
-								<input name="login" placeholder="Identifiant" type="text" />
-							</div>
-							<div class="6u 12u$(xsmall)">
-								<input name="email" placeholder="Email" type="email" />
-							</div>
-							<div class="6u 12u$(xsmall)">
-								<input name="mdp" placeholder="Mot de passe" type="password" />
-							</div>
-							<div class="6u 12u$(xsmall)">
-								<select name="statut" placeholder="Statut" />
-									<option>
-										Faites votre choix de profil
-									</option>
-									<option>
-										Demandeur
-									</option>
-									<option>
-										Bienfaiteur
-									</option>
-								</select>
+			<!-- Nav -->
+			<?php
+				if($log)
+				{
+					require_once("Modules/MenuLog.php");
+				}
+				else
+				{
+					require_once("Modules/MenuNonLog.php");
+				}
+			?>
+			<!-- Contact -->
+			<section id="four" class="wrapper special">
+				<div class="inner">
+					<header class="major narrow">
+						<h2>Se connecter</h2>
+						<p>Créez-vous un compte pour pouvoir demander ou proposer de l'aide</p>
+						<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
+						<?php
+							if($allready)
+							{
+								echo '<p style="color:red;">Ce login existe déja</p>';
+							}
+						?>
+					</header>
+					<form method="post" action="createUser.php">
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input name="nom" placeholder="Nom" type="text" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input name="prenom" placeholder="Prénom" type="text" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input name="login" placeholder="Identifiant" type="text" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input name="email" placeholder="Email" type="email" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input name="mdp" placeholder="Mot de passe" type="password" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<select name="statut" placeholder="Statut" />
+										<option>
+											Faites votre choix de profil
+										</option>
+										<option>
+											Demandeur
+										</option>
+										<option>
+											Bienfaiteur
+										</option>
+									</select>
+								</div>
 							</div>
 						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" class="special" value="Envoyer" /></li>
-						<li><input type="reset" class="alt" value="Réinitialiser" /></li>
-					</ul>
-				</form>
-			</div>
-		</section>
+						<ul class="actions">
+							<li><input type="submit" class="special" value="Envoyer" /></li>
+							<li><input type="reset" class="alt" value="Réinitialiser" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -105,4 +106,6 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 	</body>
+	<!-- Footer -->
+	<?php require_once("Modules/footer.php") ?>
 </html>

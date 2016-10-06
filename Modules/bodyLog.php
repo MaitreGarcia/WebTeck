@@ -22,7 +22,7 @@
 			}
 			else
 			{ //Quand la personne est un  bienfaiteur
-				echo '<div class="image-grid2" align="center">';
+				echo '<div class="image-grid2 cadre" align="center">';
 				echo '<a href="researchAnnonce.php" class="image"><img src="images/icones/research.png" alt="" /></a>';
 				echo '<a href="deco.php" class="image"><img src="images/icones/deco.png" alt="" /></a>';
 				echo '</div>';

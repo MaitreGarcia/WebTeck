@@ -30,53 +30,53 @@
 	<head>
 		<?php require_once("Modules/head.php") ?>
 	</head>
-	<body>
+	<body class="landing">
+		<div id="main">
+			<!-- Header -->
+			<?php require_once("Modules/header.php") ?>
 
-		<!-- Header -->
-		<?php require_once("Modules/header.php") ?> 
-
-		<!-- Nav -->
-		<?php
-			if($log)
-			{
-				require_once("Modules/MenuLog.php");
-			}
-			else
-			{
-				require_once("Modules/MenuNonLog.php");
-			}
-		?>
+			<!-- Nav -->
+			<?php
+				if($log)
+				{
+					require_once("Modules/MenuLog.php");
+				}
+				else
+				{
+					require_once("Modules/MenuNonLog.php");
+				}
+			?>
 
 
-		<!-- Four -->
-		<section class="wrapper style2 special">
-			<div class="inner">
-				<header class="major narrow">
-					<h2>Formulaire de contact</h2>
-					<p>Envoyez-nous un message si vous avez besoin d'aide</p>
-				</header>
-				<form action="#" method="POST">
-					<div class="container 75%">
-						<div class="row uniform 50%">
-							<div class="6u 12u$(xsmall)">
-								<input name="name" placeholder="Name" type="text" />
-							</div>
-							<div class="6u$ 12u$(xsmall)">
-								<input name="email" placeholder="Email" type="email" />
-							</div>
-							<div class="12u$">
-								<textarea name="message" placeholder="Message" rows="4"></textarea>
+			<!-- Four -->
+			<section class="wrapper style2 special">
+				<div class="inner">
+					<header class="major narrow">
+						<h2>Formulaire de contact</h2>
+						<p>Envoyez-nous un message si vous avez besoin d'aide</p>
+					</header>
+					<form action="#" method="POST">
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input name="name" placeholder="Name" type="text" />
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input name="email" placeholder="Email" type="email" />
+								</div>
+								<div class="12u$">
+									<textarea name="message" placeholder="Message" rows="4"></textarea>
+								</div>
 							</div>
 						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" class="special" value="Submit" /></li>
-						<li><input type="reset" class="alt" value="Reset" /></li>
-					</ul>
-				</form>
-			</div>
-		</section>
-
+						<ul class="actions">
+							<li><input type="submit" class="special" value="Submit" /></li>
+							<li><input type="reset" class="alt" value="Reset" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
+		</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
@@ -84,4 +84,6 @@
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 	</body>
+
+	<?php require_once("Modules/footer.php") ?>
 </html>

@@ -1,6 +1,6 @@
 <section id="two" class="wrapper special">
 	<div class="inner">
-		<header class="major narrow">
+		<header class="major narrow cadre">
 			<h2>HELPenior</h2>
 			<?php 
 				if($log)

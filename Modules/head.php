@@ -1,12 +1,10 @@
 <title>WebTeck</title>
 <meta charset="utf-8" />
-<<<<<<< HEAD
-=======
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="ckeditor/ckeditor.js"></script>
 <script src="Js/AnnoncePopUp.js"></script>
 <script src="Js/research.js"></script>
->>>>>>> 49f13e3c32fa23aef3bb4666337a7a58e8963472
 <link rel="icon" type="image/png" href="images/favicon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.sjs"></script><![endif]-->

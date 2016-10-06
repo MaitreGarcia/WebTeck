@@ -29,62 +29,64 @@
 	<head>
 		<?php require_once('Modules/head.php') ?>
 	</head>
-	<body>
-		<!-- Header -->
-		<?php require_once('Modules/header.php') ?>
-		
-		<!-- Nav -->
-		<?php
-			if($log)
-			{
-				require_once("Modules/MenuLog.php");
-			}
-			else
-			{
-				require_once("Modules/MenuNonLog.php");
-			}
-		?>
+	<body class="landing">
+		<div id="main">
+			<!-- Header -->
+			<?php require_once('Modules/header.php') ?>
+
+			<!-- Nav -->
+			<?php
+				if($log)
+				{
+					require_once("Modules/MenuLog.php");
+				}
+				else
+				{
+					require_once("Modules/MenuNonLog.php");
+				}
+			?>
 
 
-		<!-- Contact -->
-		<section id="four" class="wrapper special">
-			<div class="inner">
-				<header class="major narrow">
-					<h2>Connexion</h2>
-					<p>Pour vous connecter, veuillez remplir les champs ci-dessous avec vos identifiants</p>
-					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
-					<?php
-						if($fail)
-						{
-							echo '<p style="color:red">Login ou mot de passe incorrect</p>';
-						}
-					?>
-				</header>
-				<form method="POST" href="#">
-					<div class="container 75%">
-						<div class="row uniform 50%">
-							<div class="6u 12u$(xsmall)">
-								<input name="login" placeholder="Identifiant" type="text" />
-							</div>
-							<div class="6u 12u$(xsmall)">
-								<input name="mdp" placeholder="Mot de passe" type="password" />
+			<!-- Contact -->
+			<section id="four" class="wrapper special">
+				<div class="inner">
+					<header class="major narrow">
+						<h2>Connexion</h2>
+						<p>Pour vous connecter, veuillez remplir les champs ci-dessous avec vos identifiants</p>
+						<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
+						<?php
+							if($fail)
+							{
+								echo '<p style="color:red">Login ou mot de passe incorrect</p>';
+							}
+						?>
+					</header>
+					<form method="POST" href="#">
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="6u 12u$(xsmall)">
+									<input name="login" placeholder="Identifiant" type="text" />
+								</div>
+								<div class="6u 12u$(xsmall)">
+									<input name="mdp" placeholder="Mot de passe" type="password" />
+								</div>
 							</div>
 						</div>
-					</div>
-					<ul class="actions">
-						<li><input type="submit" class="special" value="Envoyer" /></li>
-						<li><input type="reset" class="alt" value="Réinitialiser" /></li>
-					</ul>
-				</form>
-			</div>
-		</section>
-
+						<ul class="actions">
+							<li><input type="submit" class="special" value="Envoyer" /></li>
+							<li><input type="reset" class="alt" value="Réinitialiser" /></li>
+						</ul>
+					</form>
+				</div>
+			</section>
+		</div>
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
-
 	</body>
+
+	<?php require_once("Modules/footer.php") ?>
 </html>
