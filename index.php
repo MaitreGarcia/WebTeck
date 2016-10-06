@@ -1,6 +1,6 @@
 <?php 
 	require_once("Fonction/connectToBdd.php");
-
+	$log = false;
 	//On regarde si jamais il y as des cookies
 	if(isset($_COOKIE['cookies_log']) && isset($_COOKIE['cookies_mdp']))
 	{

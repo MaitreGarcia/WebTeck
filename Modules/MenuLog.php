@@ -6,6 +6,7 @@
 		echo '<li><a href="index.php">Accueil</a></li>';
 		echo '<li><a href="creationAnnonce.php">Crée une annonce</a></li>';
 		echo '<li><a href="mesAnnonces.php">Mes demandes</a></li>';
+		echo '<li><a href="demandeAide.php">Demander de l\'aide</a></li>';
 		echo '<li><a href="deco.php">Se déconnécter</a></li>';
 		echo '</ul></nav>';
 	}

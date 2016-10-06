@@ -1,8 +1,7 @@
 <?php
 	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','root');
-	/* 
-		Fonction qui va crée un utilisateur dans la base de données
-	*/ 
+	
+	/*  Fonction qui va crée un utilisateur dans la base de données*/ 
 	function createUser($PDO,$login,$unNom,$unPrenom,$unMdp,$unMail,$unStatut)
 	{
 		$ash = password_hash($unMdp,PASSWORD_DEFAULT);
@@ -16,10 +15,7 @@
 			'f' => $unStatut
 		));
 	}
-	/*
-		Fonction qui va renvoyer l'utilisateur, si l'utilisateur est présent dans la base de donnée
-		Sinon, renvoie null
-	*/
+	/*  Fonction qui va renvoyer l'utilisateur, si l'utilisateur est présent dans la base de donné. Sinon, renvoie null */
 	function login($PDO,$login,$mdp)
 	{	
 		$req = $PDO->prepare("SELECT login,Nom,Prenom,Password,Statut FROM personne WHERE login = :pseudo");
@@ -44,7 +40,6 @@
 		}	
 		
 	}
-
 	/* fonction qui renvoie true, si jamais l'utisateur n'est pas déja dans la base */
 	function verfUsername($PDO, $login)
 	{

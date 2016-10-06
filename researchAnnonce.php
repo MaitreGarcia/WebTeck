@@ -36,13 +36,19 @@
 					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
 				</header>
 				<?php 
-					$annonces = allAnnonce($bdd);
-					
-					for($i=0; $i < count($annonces) ; $i++)
-					{
-						echo '<h4><a class="btn" data-popup-open="popup-'.$i.'annonce" href="#">'.$annonces[$i][0].'</a></h4>';
-					}
+					$annoncesInformatique = allAnnonce($bdd);
+				?>
 
+				<div class="informatique">
+					<h3>Informatique</h3>
+					<?php
+						for($i=0; $i < count($annonces) ; $i++)
+						{
+							echo '<h4><a class="btn" data-popup-open="popup-'.$i.'annonce" href="#">'.$annonces[$i][0].'</a></h4>';
+						}
+					?>
+				</div>
+				<?php
 					//On crée le corps des popups
 					for($i=0; $i < count($annonces); $i++)
 					{

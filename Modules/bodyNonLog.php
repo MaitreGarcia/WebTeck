@@ -10,8 +10,8 @@
 			?>
 		</header>
 		<div class="image-grid2">
-			<a href="connexion.php" class="image"><img src="images/seCo.png" alt="" /></a>
-			<a href="createUser.php" class="image"><img src="images/createAccount.png" alt="" /></a>
+			<a href="connexion.php" class="image"><img src="images/icones/seCo.png" alt="" /></a>
+			<a href="createUser.php" class="image"><img src="images/icones/createAccount.png" alt="" /></a>
 		</div>
 	</div>
 </section>
