@@ -66,7 +66,7 @@
 	/* Fonction qui va insérer l'annonce dans la base de donnée */
 	function insertAnnonce($PDO,$login,$annonce,$titre,$categorie,$prix)
 	{
-		$req = $PDO->prepare('INSERT INTO demande(login,Titre,Annonce,Categorie,DtCreate,Statut,Prix,login_bienfaiteur) VALUES(:a,:b,:c,:d,NOW(),"Open",:e,null)');
+		$req = $PDO->prepare('INSERT INTO demande(login,Titre,Annonce,Categorie,DtCreate,Statut,Prix,login_bienfaiteur) VALUES(:a,:b,:c,:d,NOW(),"Ouvert",:e,null)');
 		$req->bindParam(':a', $login);
 		$req->bindParam(':b', $titre);
 		$req->bindParam(':c', $annonce);
@@ -79,7 +79,7 @@
 	/* Renvoie un tableau en deux dimentions de toutes les annonces posté par l'utilitateur */
 	function annoncesSelonUtilistateur($PDO,$login)
 	{
-		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login = :a ORDER by DtCreate");
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande,Statut from demande WHERE login = :a ORDER by DtCreate");
 		$req->bindParam(':a', $login);
 		$req->execute();
 		return $donnees = $req->fetchAll();
@@ -95,12 +95,16 @@
 	}
 
 	//Fonction qui va recupere toutes les annonces
-	function chooseAnnonce($PDO,$id)
+	function chooseAnnonce($PDO,$login,$id)
 	{
 		$req = $PDO->prepare("UPDATE demande SET login_bienfaiteur = :a WHERE idDemande = :b ORDER by DtCreate");
 		$req->bindParam(':a', $login);
 		$req->bindParam(':b', $id);
 		$req->execute();
+
+		$req2 = $PDO->prepare("UPDATE demande SET Statut ='Traité' WHERE idDemande = :a ORDER by DtCreate");
+		$req2->bindParam(':a', $id);
+		$req2->execute();
 	}
 
 	//Fonction bienfaiteurs
@@ -112,10 +116,21 @@
 		return $donnees = $req->fetchAll();	
 	}
 
-	//Fonction bienfaiteurs
+	//Fonction annulation
 	function annulationAnnonce($PDO,$id)
 	{
-		$req = $PDO->prepare("UPDATE demande SET login_bienfaiteur = null WHERE idDemande = :a ORDER by DtCreate");
+		$req = $PDO->prepare("UPDATE demande SET login_bienfaiteur = null WHERE idDemande = :a");
+		$req->bindParam(':a', $id);
+		$req->execute();
+		$req2 = $PDO->prepare("UPDATE demande SET Statut ='Ouvert' WHERE idDemande = :a");
+		$req2->bindParam(':a', $id);
+		$req2->execute();
+	}
+
+	//Fonction delete
+	function deleteAnnonce($PDO,$id)
+	{
+		$req = $PDO->prepare("DELETE FROM demande  WHERE idDemande = :a");
 		$req->bindParam(':a', $id);
 		$req->execute();
 	}

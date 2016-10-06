@@ -49,7 +49,7 @@
 						echo '<div class="popup" data-popup="popup-'.$i.'annonce">';
 						echo '<div class="popup-inner">';
 						echo '<h3>'.$annonces[$i][0];
-						echo '<a href="annulationAnnonce.php?id='.$annonces[$i][4].'" class="add"><i class="fa fa-times-circle" aria-hidden="true"></i>
+						echo '<a href="annulationAnnonce.php?id='.$annonces[$i][4].'" class="annulation"><i class="fa fa-times-circle" aria-hidden="true"></i>
  Je ne veux plus</a></h3>';
 						echo '<h4>Catégorie : '.$annonces[$i][2].'</h4>';
 						echo '<div class="Encadrement">';

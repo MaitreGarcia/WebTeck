@@ -48,8 +48,13 @@
 					{
 						echo '<div class="popup" data-popup="popup-'.$i.'annonce">';
 						echo '<div class="popup-inner">';
-						echo '<h3>'.$annonces[$i][0].'</h3>';
-						echo '<h4>Catégorie : '.$annonces[$i][2].'</h4>';
+						echo '<h3>'.$annonces[$i][0];
+						echo '<a class="delete" href="deleteAnnonce?id='.$annonces[$i][4].'"><i class="fa fa-trash" aria-hidden="true"></i>
+Supprimer l\'annonce<span class="del"></span></a>';
+						echo '</h3>';
+						echo '<h4>Catégorie : '.$annonces[$i][2];
+						echo '<span class="statut">Statut : '.$annonces[$i][5].'</span>';
+						echo '</h4>';
 						echo '<div class="Encadrement">';
 						echo '<p>'.$annonces[$i][1].'</p>';
 						echo '</div>';

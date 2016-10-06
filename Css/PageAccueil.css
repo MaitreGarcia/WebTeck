@@ -33,3 +33,21 @@
 {
 	float:right;
 }
+
+.annulation
+{
+	float:right;
+	color:red;
+}
+
+.statut
+{
+	float:right;
+	color:red;
+}
+
+.delete
+{
+	float:right;
+	color:red;	
+}	

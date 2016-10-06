@@ -5,6 +5,6 @@
 	  	$id = $_GET['id'];
 	  	$login = $_COOKIE['cookies_log'];
 	  	chooseAnnonce($bdd,$login,$id);
-	  	header('Location: index.php');
+	  	header('Location: mesAnnoncesChoisies.php');
 	}
 ?>
