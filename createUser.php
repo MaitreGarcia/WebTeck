@@ -27,6 +27,7 @@
 	<head>
 		<?php require_once('Modules/head.php') ?>
 	</head>
+
 	<body class="landing">
 		<div id="main">
 
@@ -48,7 +49,7 @@
 			<section id="four" class="wrapper special">
 				<div class="inner">
 					<header class="major narrow">
-						<h2>Se connecter</h2>
+						<h2>Créer un compte</h2>
 						<p>Créez-vous un compte pour pouvoir demander ou proposer de l'aide</p>
 						<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
 						<?php
@@ -98,13 +99,14 @@
 					</form>
 				</div>
 			</section>
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
 	</body>
 	<!-- Footer -->
 	<?php require_once("Modules/footer.php") ?>

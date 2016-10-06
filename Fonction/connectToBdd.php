@@ -1,5 +1,5 @@
 <?php
-	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','root');
+	$bdd = new PDO('mysql:host=localhost;dbname=webteck','root','');
 	
 	/*  Fonction qui va crée un utilisateur dans la base de données*/ 
 	function createUser($PDO,$login,$unNom,$unPrenom,$unMdp,$unMail,$unStatut)
