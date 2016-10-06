@@ -13,7 +13,7 @@
 
 			if($personne[4] == "Demandeur")
 			{ //Quand la personne est un demandeur
-				echo '<div class="image-grid2">';
+				echo '<div class="image-grid2 cadre">';
 				echo '<a href="creationAnnonce.php" class="image"><img src="images/icones/postAnnonce.png" alt="" /></a>';
 				echo '<a href="mesAnnonces.php" class="image"><img src="images/icones/myAnnonce.png" alt="" /></a>';
 				echo '<a href="demandeAide.php" class="image"><img src="images/icones/help.png" alt="" /></a>';
@@ -22,7 +22,7 @@
 			}
 			else
 			{ //Quand la personne est un  bienfaiteur
-				echo '<div class="image-grid2" algin="center">';
+				echo '<div class="image-grid2" align="center">';
 				echo '<a href="researchAnnonce.php" class="image"><img src="images/icones/research.png" alt="" /></a>';
 				echo '<a href="deco.php" class="image"><img src="images/icones/deco.png" alt="" /></a>';
 				echo '</div>';

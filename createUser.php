@@ -48,7 +48,7 @@
 			<div class="inner">
 				<header class="major narrow">
 					<h2>Se connecter</h2>
-					<p>Créez vous un compte pour pouvoir demander ou proposé de l'aide</p>
+					<p>Créez-vous un compte pour pouvoir demander ou proposer de l'aide</p>
 					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
 					<?php
 						if($allready)

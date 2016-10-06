@@ -36,7 +36,8 @@
 					<p>Vous pouvez à tout moment nous appeler.</p>
 					<h3><i class="fa fa-phone" aria-hidden="true"></i> 01 75 96 36 25</h3>
 					<h3><i class="fa fa-envelope" aria-hidden="true"></i> aide@webteck.fr</h3>
-					<a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
+					<a href="index.php" class="button special big"><i class="fa fa-home" aria-hidden="true"></i> Retour à l'accueil</a>
+					<a href="contacter.php" class="button special big banner">Formulaire de contact</a>
 				</header>
 			</div>
 		</section>
