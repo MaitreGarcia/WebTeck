@@ -1,10 +1,17 @@
 <?php
 	require_once('Fonction/connectToBdd.php');
-	$log = true;
-	$login = $_COOKIE['cookies_log'];
-	$mdp = $_COOKIE['cookies_mdp'];
-	$personne = login($bdd,$login, $mdp);
-	$error = false;
+	session_start();
+	if(isset($_SESSION['login']))
+	{
+		$login = $_SESSION['login'];
+		$personne = recupPersonne($bdd,$login);
+		$error = false;
+		$log = true;
+	}
+	else
+	{
+		header('Location: connexion.php');
+	}
 
 	if(isset($_POST['categorie']) && isset($_POST['titre']) && isset($_POST['prix']) && isset($_POST['annonce']))
 	{

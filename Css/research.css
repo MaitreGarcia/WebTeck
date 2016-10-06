@@ -1,1 +1,13 @@
+.groupe
+{
+	text-align: left;
+}
+
 .informatique
+{
+	display: none;
+}
+.menage
+{
+	display: none;
+}

@@ -38,8 +38,17 @@
 				return null;
 			}
 		}	
-		
 	}
+
+	function recupPersonne($PDO,$login)
+	{
+		$req = $PDO->prepare("SELECT login,Nom,Prenom,Password,Statut FROM personne WHERE login= :a");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		$donnees = $req->fetch();
+		return $donnees;
+	}
+
 	/* fonction qui renvoie true, si jamais l'utisateur n'est pas déja dans la base */
 	function verfUsername($PDO, $login)
 	{
@@ -84,6 +93,30 @@
 	function allAnnonce($PDO)
 	{
 		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login_bienfaiteur IS NULL ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		return $donnees = $req->fetchAll();
+	}
+
+	function allAnnonceInformatique($PDO)
+	{
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login_bienfaiteur IS NULL AND Categorie = 'Informatique' ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		return $donnees = $req->fetchAll();
+	}
+
+	function allAnnonceJardin($PDO)
+	{
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login_bienfaiteur IS NULL AND Categorie = 'Jardinage' ORDER by DtCreate");
+		$req->bindParam(':a', $login);
+		$req->execute();
+		return $donnees = $req->fetchAll();
+	}
+
+	function allAnnonceMenage($PDO)
+	{
+		$req = $PDO->prepare("SELECT Titre,Annonce,Categorie,login,idDemande from demande WHERE login_bienfaiteur IS NULL AND Categorie = 'Tache menagères' ORDER by DtCreate");
 		$req->bindParam(':a', $login);
 		$req->execute();
 		return $donnees = $req->fetchAll();
